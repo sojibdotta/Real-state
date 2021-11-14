@@ -1,0 +1,1376 @@
+@import 'reset.scss';
+
+// common sass 
+
+// font weight 
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extrabold: 900;
+
+
+// font color
+$white: #fff;
+$black: #000;
+
+%pseudo {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin  cofzfwff($color, $fontsize, $fontweight, $fontfamily) {
+  color: $color;
+  font-size: $fontsize;
+  font-weight: $fontweight;
+  font-family: $fontfamily;
+}
+@mixin  cofzfwfflh($color, $fontsize, $fontweight, $fontfamily, $lineheight) {
+  color: $color;
+  font-size: $fontsize;
+  font-weight: $fontweight;
+  font-family: $fontfamily;
+  line-height: $lineheight;
+}
+
+
+// common sass 
+
+/*========== header css part start ==========*/
+.navbar {
+  .navbar-brand {
+    @include cofzfwff(#FDA94F,30px ,$light,'Poppins' );
+    text-transform: uppercase;
+    em {
+      font-style: normal;
+      font-weight: $bold;
+    }
+  }
+  .navbar-nav {
+    .nav-item {
+      margin-left: 35px;
+      position: relative;
+      .nav-link {
+        @include cofzfwff(#111,14px ,$medium ,'Poppins' );
+        letter-spacing: 0.5px;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: #666;
+          width: 0%;
+          height: 1.5px;
+          transition: all 0.2s linear;
+        }
+        &:hover::before {
+          width: 100%;
+        }
+      }
+      ul {
+        background-color: #f9f9f9;
+        width: 250px;
+        position: absolute;
+        left: 0;
+        border-radius: 4px;
+        transform-origin: top;
+        transform: scaleY(0);
+        transition: all 0.2s linear;
+        z-index: 999;
+        li {
+          padding: 8px 0 8px 20px;
+          transition: all 0.2s linear;
+          a {
+            @include cofzfwff(#111,13px ,$medium ,'Poppins' );
+            transition: all 0.2s linear;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          &:hover {
+            background-color: #FFEEE2;
+          }
+        }
+      }
+      &:hover ul {
+        transform: scaleY(1);
+      }
+    }
+  }
+  .navbar-btn {
+    margin: 5px 0 0 50px;
+    a {
+      @include cofzfwff(#f9f9f9,16px ,$semibold ,'Poppins' );
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background-color: #FDA94F;
+      padding: 10px 20px;
+      border-radius: 0 8px 0 8px;
+      transition: all 0.1s linear;
+      span {
+        margin-left: 5px;
+      }
+      &:hover {
+        background-color: #002e4e;
+      }
+    }
+  }
+}
+.nav-top {
+  background-color: #fff;
+  box-shadow: 0px 4px 6px 0px rgba(12, 0, 46, 0.06);
+}
+.navbar-animate{
+  background-color: #fff;
+  animation: headerAnimate 0.3s linear;
+  z-index: 9999;
+}
+@keyframes headerAnimate{
+  from{
+      top: -80px;
+  }
+  to{
+      top: 0px;
+  }
+}
+.slicknav_menu {
+  display: none;
+  background-color: #F8F9FA;
+  box-shadow: 0px 4px 6px 0px rgba(12, 0, 46, 0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+}
+.slicknav_menu .slicknav_brand h3 {
+  color: #FDA94F;
+  font-size: 30px;
+  font-weight: 300;
+  font-family: 'Poppins';
+  text-transform: uppercase;
+}
+.slicknav_menu .slicknav_brand h3 > em {
+  font-style: normal;
+  font-weight: 700;
+}
+.slicknav_nav .slicknav_item a, .slicknav_nav .slicknav_parent-link a {
+  font-size: 14px;
+}
+.slicknav_menu a {
+  color: #111;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: "Poppins";
+  letter-spacing: 1px;
+  padding: 7px 15px;
+}
+.slicknav_menu a:hover {
+  background-color: #2B96CC;
+  color: #fff;
+  border-radius: 0 !important;
+}
+.slicknav_menu .slicknav_menutxt {
+  display: none;
+}
+.slicknav_menu .slicknav_icon-bar {
+  background-color: #00A9FF;
+  width: 2.2em;
+  height: 0.3em;
+  margin-bottom: 3px;
+}
+.slicknav_menu .slicknav_btn {
+  background-color: transparent !important;
+}
+.slicknav_menu .slicknav_btn:hover {
+  background-color: transparent !important;
+}
+.slicknav_menu .slicknav_arrow {
+  font-size: 1.1em;
+}
+.slicknav_menu .navbar-btn a {
+  @include cofzfwff(#f9f9f9,13px ,$semibold ,'Poppins' );
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background-color: #FDA94F;
+  padding: 6px 15px;
+  border-radius: 0 8px 0 8px;
+  display: inline-block;
+  margin: 0 0 10px 10px;
+  span {
+    margin-left: 5px;
+  }
+}
+.slicknav-animate{
+  background-color: #fff;
+  animation: headerAnimate 0.3s linear;
+  z-index: 9999;
+}
+@keyframes headerAnimate{
+  from{
+      top: -80px;
+  }
+  to{
+      top: 0px;
+  }
+}
+/*========== header css part end ==========*/
+/*========== banner css part start ==========*/
+.banner-bg {
+  background: url('../images/banner.png') no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  padding-top: 150px;
+  position: relative;
+  &::before {
+    @extend %pseudo;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .banner-text {
+    h5 {
+      @include cofzfwff(#fff,15px ,$medium ,'Poppins' );
+      letter-spacing: 0.5px;
+      padding-bottom: 20px;
+    }
+    h2 {
+      @include cofzfwff(#fff,55px ,$semibold ,'Roboto' );
+      letter-spacing: 1px;
+      padding-bottom: 20px;
+    }
+  }
+  .nav-tabs{
+    border-bottom: none !important;
+  }
+  .nav-tabs .nav-item .nav-link{
+    color: #000;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px 35px !important;
+    background-color: #f9f9f9;
+    border: none !important;
+    margin-right: 10px;
+  }
+  .nav-tabs .nav-item .activeA{
+    background-color: #FDA94F;
+    color: #ffffff;
+  }
+  .tab-content {
+    margin-bottom: 100px;
+    .tab-pane {
+      width: 100%;
+      background-color: #fff;
+      padding: 30px 20px;
+      border-radius: 0 10px 10px 10px;
+      .tabs-body {
+        .location {
+          position: relative;
+          .location-input {
+            width: 100%;
+            border: 1px solid #D4D4D4;
+            border-radius: 4px;
+            text-indent: 40px;
+            height: 40px;
+            &::placeholder {
+              @include cofzfwff(#333,13px ,$regular ,'Roboto' );
+              letter-spacing: 0.5px;
+            }
+          }
+          .location-icon {
+            position: absolute;
+            color: #FDA94F;
+            font-size: 16px;
+            top: 5px;
+            left: 15px;
+          }
+        }
+      }
+    }
+    .properties {
+      position: relative;
+      ul {
+        li {
+          border: 1px solid #D4D4D4;
+          border-radius: 4px;
+          a {
+            @include cofzfwff(rgba(51, 51, 51, 0.7),13px ,$regular ,'Roboto' );
+            letter-spacing: 0.5px;
+            padding: 6px 0 6px 20px;
+            display: block;
+            span {
+              color: #FDA94F;
+              font-size: 18px;
+              margin-left: 10px;
+            }
+          }
+          .properties-dropdown {
+            position: absolute;
+            width: 100%;
+            visibility: hidden;
+            opacity: 0;
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: all 0.2s linear;
+            z-index: 9999;
+            a {
+              @include cofzfwff(#f9f9f9,13px ,$regular ,'Roboto' );
+              letter-spacing: 0.5px;
+              padding: 6px 0 6px 20px;
+              display: block;
+              background-color: #FDA94F;
+            }
+            &.show {
+              visibility: visible;
+              opacity: 1;
+              transform: scaleY(1);
+            }
+          }
+        }
+      }
+    }
+    .room {
+      position: relative;
+      ul {
+        li {
+          border: 1px solid #D4D4D4;
+          border-radius: 4px;
+          a {
+            @include cofzfwff(rgba(51, 51, 51, 0.7),13px ,$regular ,'Roboto' );
+            letter-spacing: 0.5px;
+            padding: 6px 0 6px 20px;
+            display: block;
+            span {
+              color: #FDA94F;
+              font-size: 18px;
+              margin-left: 10px;
+            }
+          }
+          .room-dropdown {
+            position: absolute;
+            width: 100%;
+            visibility: hidden;
+            opacity: 0;
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: all 0.2s linear;
+            z-index: 9999;
+            a {
+              @include cofzfwff(#f9f9f9,13px ,$regular ,'Roboto' );
+              letter-spacing: 0.5px;
+              padding: 6px 0 6px 20px;
+              display: block;
+              background-color: #FDA94F;
+            }
+            &.show {
+              visibility: visible;
+              opacity: 1;
+              transform: scaleY(1);
+            }
+          }
+        }
+      }
+    }
+    .price {
+      position: relative;
+      ul {
+        li {
+          border: 1px solid #D4D4D4;
+          border-radius: 4px;
+          a {
+            @include cofzfwff(rgba(51, 51, 51, 0.7),13px ,$regular ,'Roboto' );
+            letter-spacing: 0.5px;
+            padding: 6px 0 6px 20px;
+            display: block;
+            span {
+              color: #FDA94F;
+              font-size: 18px;
+              margin-left: 10px;
+            }
+          }
+          .price-dropdown {
+            position: absolute;
+            width: 100%;
+            visibility: hidden;
+            opacity: 0;
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: all 0.2s linear;
+            z-index: 9999;
+            a {
+              @include cofzfwff(#f9f9f9,13px ,$regular ,'Roboto' );
+              letter-spacing: 0.5px;
+              padding: 6px 0 6px 20px;
+              display: block;
+              background-color: #FDA94F;
+            }
+            &.show {
+              visibility: visible;
+              opacity: 1;
+              transform: scaleY(1);
+            }
+          }
+        }
+      }
+    }
+    .tabs-btn {
+      a {
+        @include cofzfwff(#f9f9f9,13px ,$regular ,'Roboto' );
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 10px 0;
+        text-align: center;
+        display: block;
+        background-color: #FDA94F;
+        border-radius: 4px;
+        transition: all 0.2s linear;
+        &:hover {
+          background-color: #002e4e;
+        }
+      }
+    }
+  }
+}
+/*========== banner css part end ==========*/
+
+/*========== banner bottom css part start ==========*/
+.banner-bottom-bg {
+  margin-top: -95px;
+  .banner-bottom-card {
+    padding: 40px 20px;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    position: relative;
+    .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #FFF0E1;
+      margin: auto;
+      position: relative;
+      span {
+        color: #FDA94F;
+        font-size: 40px;
+        position: absolute;
+        top: 15px;
+        right: -5px;
+      }
+    }
+    h4 {
+      padding: 30px 0;
+      a {
+        @include cofzfwff(#333,20px ,$semibold ,'Poppins' );
+        letter-spacing: 0.5px;
+      }
+    }
+    a {
+      @include cofzfwff(rgba(51, 51, 51, 0.7),14px ,$medium ,'Poppins' );
+      letter-spacing: 0.5px;
+      transition: all 0.6s linear;
+      position: relative;
+      span {
+        position: absolute;
+        top: -5px;
+        right: -30px;
+        color: #FDA94F;
+        font-size: 18px;
+        transition: all 0.4s linear;
+      }
+      &:hover {
+        color: #FDA94F;
+      }
+      &:hover span {
+        right: -35px;
+      }
+    }
+    .overlay {
+      width: 100%;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #FDA94F;
+    }
+  }
+}
+.banner-bottom-slider .priv-arrow {
+  color: #f9f9f9;
+  background-color: #FDA94F;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #E6E6E6;
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  z-index: 9;
+  font-size: 32px;
+  opacity: 0;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.banner-bottom-slider .priv-arrow i {
+  font-family: "Font Awesome 5 Free";
+}
+.banner-bottom-slider .next-arrow {
+  color: #f9f9f9;
+  background-color: #FDA94F;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #E6E6E6;
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  right: 0;
+  z-index: 9;
+  font-size: 32px;
+  opacity: 0;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.banner-bottom-slider .next-arrow i {
+  font-family: "Font Awesome 5 Free";
+}
+.banner-bottom-slider:hover .priv-arrow {
+  opacity: 1;
+}
+.banner-bottom-slider:hover .next-arrow {
+  opacity: 1;
+}
+/*========== banner bottom css part end ==========*/
+
+/*========== services css part start ==========*/
+.services-bg {
+  padding: 80px 0;
+  .serevices-card {
+    position: relative;
+    padding: 20px 2px;
+    .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: auto;
+      background-color: rgba(253, 169, 79, 0.7);
+      position: relative;
+      transition: all 0.2s linear;
+      a {
+        color: #f9f9f9;
+        font-size: 24px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    h4 {
+      @include cofzfwff(#2B2E31,16px ,$semibold ,'Roboto' );
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 20px 0;
+    }
+    p {
+      @include cofzfwfflh(#2B2E31,13px ,$light ,'Poppins' ,22px );
+      letter-spacing: 0.5px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background-color: #116064;
+      transition: all 0.3s linear;
+      z-index: -1;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+    &:hover .icon {
+      background-color: #19B8DF;
+    }
+    &:hover h4 {
+      color: #f9f9f9;
+    }
+    &:hover p {
+      color: #f9f9f9;
+    }
+  }
+}
+/*========== services css part end ==========*/
+
+/*========== feature css part start ==========*/
+.feature-bg {
+  padding-bottom: 80px;
+}
+.feature-card1 {
+  background: url('../images/feature-img/feature-img1.png') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 280px 0 30px 20px;
+  border-radius: 10px;
+  position: relative;
+  .feature1-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    .feature1-text {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      a {
+        @include cofzfwff(#fff,24px ,$semibold ,'Poppins' );
+        letter-spacing: 0.5px;
+        padding-bottom: 10px;
+        display: block
+      }
+      h5 {
+        @include cofzfwff(#fff,14px ,$regular,'Poppins' );
+        letter-spacing: 0.5px;
+        em {
+          font-style: normal;
+          font-weight: $semibold;
+        }
+      }
+    }
+  }
+}
+.feature-card2 {
+  margin-bottom: 30px;
+  .feature2-img {
+    overflow: hidden;
+    img {
+      border-radius: 10px 10px 0 0;
+      height: 160px !important;
+      transition: all 0.4s linear;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .feature2-text {
+    background-color: #F6F6F6;
+    padding: 20px 10px;
+    h6 {
+      @include cofzfwff(#666,12px ,$regular ,'Poppins' );
+      letter-spacing: 0.5px;
+    }
+    h5 {
+      @include cofzfwff(#101425,16px ,$semibold ,'Poppins' );
+      padding: 10px 0;
+    }
+    h4 {
+      @include cofzfwff(#101425,16px ,$semibold ,'Poppins' );
+      padding-bottom: 15px;
+      strike {
+        color: #666;
+        padding-left: 5px;
+      }
+    }
+    ul {
+      padding-top: 15px;
+      border-top: 1px solid #E8E8E8;
+      li {
+        display: inline-block;
+        @include cofzfwff(#666,12px ,$regular ,'Poppins' );
+        margin-right: 8px;
+        span {
+          color: #FDA94F;
+        }
+      }
+    }
+  }
+}
+/*========== feature css part end ==========*/
+
+/*========== popular poperties css part start ==========*/
+.p-poperties-bg {
+  background: url('../images/p-poperties/bg.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 60px 0 40px 0;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  }
+}
+.p-poperties-card {
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 2px 2px 1px rgba(0,0,0, 0.035);
+  margin-bottom: 30px;
+  .poperties-img {
+    position: relative;
+    .img-text {
+      display: flex;
+      .left {
+        @include cofzfwff(#fff,13px ,$regular ,'Poppins' );
+        background-color: #19B8DF;
+        padding: 1px 13px;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      .right {
+        @include cofzfwff(#fff,13px ,$regular ,'Poppins' );
+        background-color: #F6700E;
+        padding: 1px 13px;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+    .overlay1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s linear;
+      width: 0%;
+      .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        a {
+          color: #f9f9f9;
+          font-size: 18px;
+          margin-right: 10px;
+          cursor: pointer;
+          &:hover {
+            color: #0074E8;
+          }
+        }
+      }
+    }
+    &:hover .overlay1 {
+      visibility: visible;
+      opacity: 1;
+      width: 50%;
+    }
+    .overlay2 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s linear;
+      width: 0%;
+      .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        a {
+          color: #f9f9f9;
+          font-size: 18px;
+          margin-right: 10px;
+          cursor: pointer;
+          &:hover {
+            color: #0074E8;
+          }
+        }
+      }
+    }
+    &:hover .overlay2 {
+      visibility: visible;
+      opacity: 1;
+      width: 50%;
+    }
+  }
+  .poperties-text {
+    padding: 10px 0;
+    border-bottom: 1px solid #EFEFEF;
+    h4 {
+      @include cofzfwff(#F6700E,13px ,$bold ,'Poppins' );
+      letter-spacing: 0.6px;
+    }
+    h5 {
+      @include cofzfwff(#999,11px ,$light ,'Poppins' );
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding-top: 5px;
+    }
+  }
+  .popertis-bottom-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    .info-card {
+      text-align: center;
+      .text {
+        @include cofzfwff(#010101,13px ,$regular ,'Poppins' );
+        padding-bottom: 2px;
+        display: block;
+      }
+      .icon {
+        color: #656565;
+        font-size: 13px;
+      }
+    }
+  }
+}
+/*========== popular poperties css part end ==========*/
+
+/*========== sale-rent css part start ==========*/
+.sale-rent-bg {
+  background-color: #FCFCFC;
+  padding: 40px 0;
+  .sale-rent-left {
+    .sale-title {
+      background: url('../images/sale.png') no-repeat;
+      background-position: center left;
+      h3 {
+        @include cofzfwff(#010101,15px ,$bold ,'Roboto' );
+        text-transform: uppercase;
+        padding: 25px 0 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #EFEFEF;
+        text-indent: 45px;
+      }
+    }
+    .rent-title {
+      background: url('../images/rent.png') no-repeat;
+      background-position: center left;
+      h3 {
+        @include cofzfwff(#010101,15px ,$bold ,'Roboto' );
+        text-transform: uppercase;
+        padding: 25px 0 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #EFEFEF;
+        text-indent: 45px;
+      }
+    }
+    .housing, .workshop, .land {
+      h4 {
+        @include cofzfwff(#656565,13px ,$regular ,'Poppins' );
+        letter-spacing: 0.6px;
+        padding-bottom: 10px;
+      }
+      ul {
+        border-left: 1px solid #F6700E;
+        padding: 0 25px;
+        margin-bottom: 20px;
+        li {
+          position: relative;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: -25px;
+            width: 15px;
+            height: 1px;
+            background-color: #F6700E;
+          }
+          a {
+            @include cofzfwfflh(#656565,13px ,$regular ,'Roboto' ,15px );
+            letter-spacing: 0.6px;
+          }
+        }
+      }
+    }
+  }
+  .navbar {
+    margin-top: 18px;
+    padding: 0 !important;
+    .nav-tabs {
+      border-bottom: none !important;
+      .nav-item {
+        .nav-link {
+          @include cofzfwff(#010101,13px ,$bold ,'Roboto' );
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          padding: 10px 15px;
+          &.active {
+            background-color: #19B8DF;
+            color: #fff;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+          }
+        }
+      }
+    }
+  }
+  .tab-content {
+    border: 1px solid #EFEFEF;
+    padding: 15px;
+  }
+  .agent-area {
+    .agent-title {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #EFEFEF;
+      margin-top: 30px;
+      h3 {
+        @include cofzfwff(#010101,15px ,$bold ,'Roboto' );
+        text-transform: uppercase;
+        span {
+          color: #F6700E;
+          padding-right: 10px;
+        }
+      }
+    }
+    .agent-card {
+      padding: 10px;
+      border: 1px solid #F0F0F0;
+      margin: 15px 0 11px 0;
+      .agent-img {
+        img {
+          width: 70%;
+          border-radius: 50%;
+          border: 1px solid #EFEFEF;
+          padding: 10px;
+          margin-bottom: 15px;
+        }
+      }
+      .agent-details {
+        h4 {
+          @include cofzfwff(#010101,13px ,$medium,'Roboto' );
+          letter-spacing: 0.5px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #EFEFEF;
+        }
+        h5 {
+          @include cofzfwff(#656565,13px ,$regular,'Roboto' );
+          span {
+            color: #19B8DF;
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+    .agent-banner {
+      img {
+        max-width: 100%;
+        height: 150px;
+      }
+    }
+  }
+}
+/*========== sale-rent css part end ==========*/
+
+/*========== register css part start ==========*/
+.register-bg {
+  background: url('../images/register-bg.png') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 60px 0;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(253, 169, 79, 0.9);
+  }
+  .register-left {
+    h3 {
+      @include cofzfwff(#fff,32px ,$bold ,'Roboto' );
+      letter-spacing: 0.5px;
+    }
+  }
+  .register-right {
+    text-align: right;
+    a {
+      @include cofzfwff(#FDA94F,14px ,$bold,'Roboto' );
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 10px 25px;
+      transition: all 0.2s linear;
+      &:hover {
+        color: #fff;
+        background-color: #FDA94F;
+      }
+    }
+  }
+}
+/*========== register css part end ==========*/
+
+/*========== poperties cities css part start ==========*/
+.city-poperties-bg {
+  padding: 80px 0;
+  .poperties-card {
+    margin-bottom: 30px;
+    overflow: hidden;
+    .left-card-img {
+      position: relative;
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .poperties-last-img {
+        height: 130px;
+        width: 100%;
+      }
+      .overlay1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s linear;
+        width: 0%;
+        border-radius: 10px 0 0 10px;
+        .icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          a {
+            color: #f9f9f9;
+            font-size: 18px;
+            margin-right: 10px;
+            cursor: pointer;
+            &:hover {
+              color: #0074E8;
+            }
+          }
+        }
+      }
+      &:hover .overlay1 {
+        visibility: visible;
+        opacity: 1;
+        width: 50%;
+      }
+      .overlay2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s linear;
+        width: 0%;
+        border-radius: 0 10px 10px 0;
+        .icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          a {
+            color: #f9f9f9;
+            font-size: 18px;
+            margin-right: 10px;
+            cursor: pointer;
+            &:hover {
+              color: #0074E8;
+            }
+          }
+        }
+      }
+      &:hover .overlay2 {
+        visibility: visible;
+        opacity: 1;
+        width: 50%;
+      }
+    }
+  }
+}
+/*========== poperties cities css part end ==========*/
+
+/*========== testimonial css part start ==========*/
+.testimonial-bg {
+  background: url('../images/testimonial-bg.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 70px 0 60px 0;
+  position: relative;
+  &::before {
+    @extend %pseudo;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  }
+  .testimonial-card {
+    border: 1px solid #F0F0F0;
+    box-shadow: 2px 2px 1px RGBa(0,0,0, 0.035);
+    background-color: #FFFFFF;
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    .details {
+      width: 75%;
+      text-align: right;
+      margin: 0 5%;
+      h4 {
+        @include cofzfwff(#010101,13px ,$semibold,'Poppins' );
+        letter-spacing: 1px;
+        padding-bottom: 10px;
+        margin: 15px 0 10px;
+        border-bottom: 1px solid #efefef;
+      }
+      p {
+        @include cofzfwfflh(#999999,13px ,$regular ,'Poppins' ,20px );
+        letter-spacing: 0.5px;
+        padding-bottom: 20px;
+        span {
+          color: #19B8DF;
+        }
+      }
+    }
+    .details2 {
+      text-align: left;
+    }
+    .img {
+      width: 20%;
+      img {
+        border-radius: 50%;
+        border: 1px solid #EFEFEF;
+        padding: 9px;
+      }
+    }
+  }
+}
+/*========== testimonial css part end ==========*/
+
+/*========== recent projects css part start ==========*/
+.recent-properties-bg {
+  padding: 70px 0;
+  .recent-poperties-slider .priv-arrow {
+    color: #f9f9f9;
+    background-color: #FDA94F;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid rgba(112, 112, 112, 0.17);
+    cursor: pointer;
+    position: absolute;
+    top: -20%;
+    right: 60px;
+    z-index: 9;
+    font-size: 32px;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+  }
+  .recent-poperties-slider .priv-arrow i {
+    font-family: "Font Awesome 5 Free";
+  }
+  .recent-poperties-slider .next-arrow {
+    color: #f9f9f9;
+    background-color: #FDA94F;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid rgba(112, 112, 112, 0.17);
+    cursor: pointer;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    z-index: 9;
+    font-size: 32px;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+  }
+  .recent-poperties-slider .next-arrow i {
+    font-family: "Font Awesome 5 Free";
+  }
+}
+/*========== recent projects css part end ==========*/
+
+/*========== feature projects css part start ==========*/
+.feature-projects-bg {
+  padding-bottom: 70px;
+}
+/*========== feature projects css part end ==========*/
+
+/*========== brand css part start ==========*/
+.brand-bg {
+  background-color: #F9F9F8;
+  padding: 40px 0;
+  .brand-title {
+    h3 {
+      @include cofzfwff(#353535,22px ,$medium ,'Poppins' );
+      letter-spacing: 0.5px;
+      padding-bottom: 25px;
+    }
+  }
+  .brand-img {
+    img {
+      max-width: 100%;
+    }
+  }
+}
+/*========== brand css part end ==========*/
+
+/*========== footer css part start ==========*/
+.footer-bg {
+  background-color: #EBEEF3;
+  padding: 50px 0;
+  .footer-card {
+    h3 {
+      @include cofzfwff(#101425,15px ,$bold ,'Roboto' );
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #c1c1c1;
+      span {
+        color: #F6700E;
+        margin-right: 3px;
+      }
+    }
+    ul {
+      li {
+        margin-bottom: 6px;
+        a {
+          @include cofzfwff(rgba(0, 0, 0, 0.8),13px ,$regular ,'Poppins' );
+          letter-spacing: 0.5px;
+          transition: all 0.1s linear;
+          &:hover {
+            color: #F6700E;
+          }
+        }
+      }
+    }
+    p {
+      @include cofzfwfflh(rgba(0, 0, 0, 0.8),13px ,$regular ,'Roboto' ,22px );
+      letter-spacing: 0.5px;
+      em {
+        font-style: normal;
+        color: #F6700E;
+      }
+      span {
+        color: #656565;
+      }
+    }
+    .btn {
+      @include cofzfwff(#fff,11px ,$medium ,'Roboto' );
+      text-transform: uppercase;
+      padding: 5px 15px;
+      background-color: #F6700E;
+      letter-spacing: 1px;
+      margin-top: 20px;
+      border-radius: 0 !important;
+    }
+    .time {
+      @include cofzfwff(#545454,11px ,$bold ,'Roboto' );
+      text-transform: uppercase;
+      text-decoration: underline;
+      letter-spacing: 1px;
+      padding-bottom: 20px;
+    }
+    .email {
+      margin-top: 20px;
+      input {
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        vertical-align: middle;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        background-color: #fff;
+        border: 1px solid #3a3a3a;
+        &::placeholder {
+          color: #000;
+          font-size: 12px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+/*========== footer css part end ==========*/
+
+/*========== copyright css part start ==========*/
+.copyright-bg {
+  background-color: #EBEEF3;
+  padding: 15px 0;
+  border-top: 1px solid #c1c1c1;
+  .copyright-area {
+    p {
+      @include cofzfwff(rgba(0, 0, 0, 0.8),14px ,$regular ,'Roboto' );
+      letter-spacing: 0.7px;
+      a {
+        color: #000;
+        transition: all 0.1s linear;
+        &:hover {
+          color: #F6700E;
+        }
+      }
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+}
+/*========== copyright css part end ==========*/
+
+/* ===== back to top ===== */
+#button {
+  display: inline-block;
+  background-color: #074979;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  color: #f9f9f9;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  -webkit-transition: background-color .3s, opacity .5s, visibility .5s;
+  transition: background-color .3s, opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+// font-family: 'Poppins', sans-serif;
+
+// font-family: 'Roboto', sans-serif;

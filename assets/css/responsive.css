@@ -1,0 +1,136 @@
+@media screen and (max-width:1199px) {
+  .navbar .navbar-btn a {
+    padding: 8px 12px;
+  }
+  .navbar .navbar-nav .nav-item {
+    margin-left: 15px;
+  }
+  .navbar .navbar-btn {
+	margin-left: 35px;
+  }
+  .banner-bg .tab-content .tab-pane .tabs-body .location {
+    margin-bottom: 20px;
+  }
+  .banner-bg .tab-content .properties {
+    margin-bottom: 20px;
+  }
+  .agent-banner {
+    margin-top: 15px;
+  }
+  .sale-rent-bg .agent-area .agent-banner img {
+    height: 245px;
+  }
+  .city-poperties-bg .poperties-card .left-card-img .poperties-last-img {
+    height: 100px;
+  }
+}
+
+@media screen and (max-width:991px) {
+
+  .slicknav_menu {
+    display: block;
+  }
+  .navbar {
+    display: none;
+  }
+  .navbar-tabs {
+    display: block !important;
+  }
+  .serevices-card {
+    margin-bottom: 30px;
+  }
+  .sale-rent-bg .agent-area .agent-banner img {
+    height: 235px;
+  }
+  .city-poperties-bg {
+    padding: 60px 0;
+  }
+  .city-poperties-bg .poperties-card .left-card-img .poperties-last-img {
+    height: 100%;
+    width: 100%;
+  }
+  .brand-img {
+    margin-bottom: 30px;
+  }
+  .footer-card {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .slicknav_menu .slicknav_brand h3 {
+    font-size: 26px;
+  }
+  .banner-bg .tab-content .room {
+    margin-bottom: 20px;
+  }
+  .banner-bg .tab-content .price {
+    margin-bottom: 20px;
+  }
+  .banner-bg .banner-text h5 {
+    letter-spacing: 1.5px;
+    padding-bottom: 10px;
+  }
+  .banner-bg .banner-text h2 {
+    font-size: 40px;
+  }
+  .banner-bottom-bg .banner-bottom-card h4 a {
+    font-size: 18px;
+  }
+  .banner-bottom-bg .banner-bottom-card a {
+    font-size: 13px;
+  }
+  .services-bg {
+    padding: 40px 0;
+  }
+  .feature-bg {
+  padding-bottom: 40px;
+  }
+  .feature-bg .feature-card1 .feature1-overlay .feature1-text a {
+    font-size: 16px;
+  }
+  .feature-bg .feature-card1 .feature1-overlay .feature1-text h5 {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .feature-bg .feature-card1 .feature1-overlay .feature1-text {
+    bottom: 15px;
+    left: 10px;
+  }
+  .sale-rent-bg .agent-area .agent-banner img {
+    height: 265px;
+  }
+  .register-bg .register-right {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .register-left {
+    text-align: center;
+  }
+  .recent-properties-bg {
+    padding: 50px 0 30px 0;
+  }
+  .feature-projects-bg {
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width:575px) {
+  .banner-bg {
+    padding-top: 120px;
+  }
+  .feature-bg .feature-card1 {
+    margin-bottom: 30px;
+  }
+  .feature-card2 .feature2-img img {
+    height: 200px;
+  }
+  .recent-properties-bg .recent-poperties-slider .priv-arrow {
+    right: 75px;
+    top: -13%;
+  }
+  .recent-properties-bg .recent-poperties-slider .next-arrow {
+    right: 15px;
+    top: -13%;
+  }
+}
